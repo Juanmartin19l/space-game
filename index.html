@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚀 Explorador del Espacio - Aventura Cósmica</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="stars"></div>
+  <div class="nebula"></div>
+
+  <header>
+    <h1>🚀 EXPLORADOR DEL ESPACIO</h1>
+    <p>Descubre los misterios del universo</p>
+  </header>
+
+  <nav>
+    <button class="nav-btn active" data-section="home">🏠 Inicio</button>
+    <button class="nav-btn" data-section="planets">🪐 Planetas</button>
+    <button class="nav-btn" data-section="spaceship">🚀 Nave</button>
+    <button class="nav-btn" data-section="quiz">🧠 Quiz</button>
+  </nav>
+
+  <main>
+    <!-- Sección Inicio -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <h2>¡Bienvenido, Explorador!</h2>
+        <p>Embárcate en una aventura épica a través del cosmos. Explora planetas, aprende sobre el espacio y pon a
+          prueba tus conocimientos.</p>
+        <button class="cta-button" onclick="startMission()">🚀 INICIAR MISIÓN</button>
+      </div>
+      <div class="mission-counter">
+        <h3>Misiones Completadas: <span id="missionCount">0</span></h3>
+      </div>
+    </section>
+
+    <!-- Sección Planetas -->
+    <section id="planets" class="section">
+      <h2>Sistema Solar</h2>
+      <div class="solar-system">
+        <div class="planet-container">
+          <div class="planet mercury" data-planet="mercury">
+            <span class="planet-name">Mercurio</span>
+          </div>
+          <div class="planet venus" data-planet="venus">
+            <span class="planet-name">Venus</span>
+          </div>
+          <div class="planet earth" data-planet="earth">
+            <span class="planet-name">Tierra</span>
+          </div>
+          <div class="planet mars" data-planet="mars">
+            <span class="planet-name">Marte</span>
+          </div>
+          <div class="planet jupiter" data-planet="jupiter">
+            <span class="planet-name">Júpiter</span>
+          </div>
+          <div class="planet saturn" data-planet="saturn">
+            <span class="planet-name">Saturno</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="planetInfo" class="planet-info hidden">
+        <button class="close-btn" onclick="closePlanetInfo()">✕</button>
+        <h3 id="planetTitle"></h3>
+        <div id="planetDetails"></div>
+        <button class="visit-btn" onclick="visitPlanet()">🚀 Visitar Planeta</button>
+      </div>
+    </section>
+
+    <!-- Sección Nave Espacial -->
+    <section id="spaceship" class="section">
+      <h2>Centro de Control de la Nave</h2>
+      <div class="spaceship-dashboard">
+        <div class="dashboard-panel">
+          <h3>⚡ Energía</h3>
+          <div class="progress-bar">
+            <div id="energyBar" class="progress-fill" style="width: 100%"></div>
+          </div>
+          <button onclick="rechargeEnergy()">🔋 Recargar</button>
+        </div>
+
+        <div class="dashboard-panel">
+          <h3>🛡️ Escudos</h3>
+          <div class="progress-bar">
+            <div id="shieldBar" class="progress-fill shield" style="width: 80%"></div>
+          </div>
+          <button onclick="repairShields()">🔧 Reparar</button>
+        </div>
+
+        <div class="dashboard-panel">
+          <h3>🎯 Sistema de Navegación</h3>
+          <div class="coordinate-display">
+            <p>X: <span id="coordX">0</span></p>
+            <p>Y: <span id="coordY">0</span></p>
+            <p>Z: <span id="coordZ">0</span></p>
+          </div>
+          <button onclick="randomJump()">🌀 Salto Cuántico</button>
+        </div>
+      </div>
+
+      <div class="spaceship-visual">
+        <div class="spaceship">🚀</div>
+        <div class="engine-trail"></div>
+      </div>
+    </section>
+
+    <!-- Sección Quiz -->
+    <section id="quiz" class="section">
+      <h2>Quiz Espacial</h2>
+      <div id="quizContainer">
+        <div id="question" class="quiz-question"></div>
+        <div id="options" class="quiz-options"></div>
+        <div id="quizResult" class="quiz-result hidden"></div>
+        <button id="nextQuestion" class="quiz-btn hidden" onclick="nextQuestion()">Siguiente Pregunta</button>
+        <button id="startQuiz" class="quiz-btn" onclick="startQuiz()">🧠 Comenzar Quiz</button>
+      </div>
+      <div class="quiz-score">
+        <h3>Puntuación: <span id="quizScore">0</span>/10</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌌 Explorador del Espacio © 2025 - ¡El universo te espera!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
